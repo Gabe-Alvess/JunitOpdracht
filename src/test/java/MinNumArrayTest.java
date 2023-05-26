@@ -5,31 +5,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MinNumArrayTest {
 
-    private MinNumArray minNumArrayDefault;
-    private MinNumArray minNumArrayCustom;
-
-    private final int[] customIntArray = {1000, 50, 777, 900, 50, 187, 2};
+    private MinNumArray minNumArray;
 
     @BeforeEach
     void setup() {
-        minNumArrayDefault = new MinNumArray();
-        minNumArrayCustom = new MinNumArray(customIntArray);
+        minNumArray = new MinNumArray();
     }
 
     @Test
-    void shouldReturnEqualsSmallestNumberInTheArrayWithDefaultIntArray() {
+    void shouldReturnEqualsSmallestNumberInTheArray() {
 
-        int returnedNumber = minNumArrayDefault.getSmallestNumber();
+        int[] numArray = new int[]{1, 200, -90, 700};
 
-        assertEquals(5, returnedNumber);
+        int returnedNumber = minNumArray.getSmallestNumber(numArray);
+
+        assertEquals(-90, returnedNumber);
     }
-
-    @Test
-    void shouldReturnEqualsSmallestNumberInTheArrayWithCustomIntArray() {
-
-        int returnedNumber = minNumArrayCustom.getSmallestNumber();
-
-        assertEquals(2, returnedNumber);
-    }
-
 }

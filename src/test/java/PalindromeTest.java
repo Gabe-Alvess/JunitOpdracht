@@ -26,11 +26,11 @@ class PalindromeTest {
     @ParameterizedTest(name = "Word: {0} - Expected Answer: {1}")
     @CsvSource(value = {"Mom, Yes", "Bob, Yes", "Mouse, No"})
 
-    void shouldReturnEqualsYesOrNoIfWordIsOrNotAPalindrome(String word, String expectedAnswer) {
+    void shouldReturnEqualsYesOrNoIfWordIsOrNotAPalindrome(String word, String expected) {
 
-        String returnedAnswer = palindrome.isWordAPalindrome(word);
+        String actual = palindrome.isWordAPalindrome(word);
 
-        assertEquals(expectedAnswer, returnedAnswer);
+        assertEquals(expected, actual);
     }
 
 

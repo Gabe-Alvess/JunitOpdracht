@@ -7,16 +7,10 @@ public class OddOrEven {
 
         char endOfNumber = numToString.charAt(index);
 
-        String result = "";
-
-        switch (endOfNumber) {
-            case '0': case '2': case '4': case '6': case '8':
-                result = "Even";
-                break;
-            case '1': case '3': case '5': case '7': case '9':
-                result = "Odd";
-        }
-
-        return result;
+        return switch (endOfNumber) {
+            case '0', '2', '4', '6', '8' -> "Even";
+            case '1', '3', '5', '7', '9' -> "Odd";
+            default -> "";
+        };
     }
 }
